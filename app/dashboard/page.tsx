@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../_providers/AuthProvider";
+import Link from "next/link";
 
 interface Events {
   id: string;
@@ -36,6 +37,15 @@ const page = () => {
 
   return (
     <div className="p-6">
+      <div className="flex justify-end">
+        <Link
+          href="/dashboard/schedule"
+          className="inline-block px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition"
+        >
+          Schedule Event
+        </Link>
+      </div>
+
       <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
 
       {events.length === 0 ? (
